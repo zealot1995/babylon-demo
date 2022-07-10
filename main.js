@@ -6,7 +6,7 @@ const port = process.env.PORT || 9005;
 const app = express();
 const rootPath = path.join(__dirname, '/');
 
-app.use(express.static(dist));
+app.use(express.static(rootPath));
 app.get('*', (req, res, _next) => {
   res.sendFile('index.html', { root: rootPath });
 });
